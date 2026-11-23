@@ -55,6 +55,18 @@ bash install.sh
 
 Default installation path: `~/.local/bin/jnbox`. Add `~/.local/bin` to your PATH if needed. Use `--install-dir PATH` or `--no-skill` to customize installation. Windows users can download the matching ZIP from Releases and verify it before extracting `jnbox.exe`.
 
+### More installation options in preparation
+
+npm, Homebrew, and WinGet are pending public release. For now, use the signed installer above or download your platform archive from GitHub Releases. These commands are for after each channel opens.
+
+| Channel | Environment | Planned command |
+| --- | --- | --- |
+| npm | Node.js on macOS, Linux, or Windows | `npm install -g @liangyouyiji/jnbox` or `npx @liangyouyiji/jnbox --help` for one-off use |
+| Homebrew | macOS or Linux with Homebrew | `brew install liangyouyiji-dev/tap/jnbox` |
+| WinGet | Windows PowerShell | `winget install --id Liangyouyiji.Jnbox --exact` |
+
+See the [official installation guide](https://liangyouyiji.com/help/jnbox-install) for channel availability.
+
 ## Releases and verification
 
 Download your platform archive from [GitHub Releases](https://github.com/liangyouyiji-dev/jnbox/releases/latest).
