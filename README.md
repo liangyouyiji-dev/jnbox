@@ -55,27 +55,6 @@ bash install.sh
 
 Default installation path: `~/.local/bin/jnbox`. Add `~/.local/bin` to your PATH if needed. Use `--install-dir PATH` or `--no-skill` to customize installation. Windows users can download the matching ZIP from Releases and verify it before extracting `jnbox.exe`.
 
-### Homebrew
-
-On macOS or Linux with Homebrew, install from the [official tap](https://github.com/liangyouyiji-dev/homebrew-tap):
-
-```sh
-brew install liangyouyiji-dev/tap/jnbox
-```
-
-Upgrade with `brew upgrade liangyouyiji-dev/tap/jnbox`. Run `jnbox install-skill` if you need the Agent Skill.
-
-### More installation options in preparation
-
-npm and WinGet are pending public release. These commands are for after each channel opens.
-
-| Channel | Environment | Planned command |
-| --- | --- | --- |
-| npm | Node.js on macOS, Linux, or Windows | `npm install -g @liangyouyiji/jnbox` or `npx @liangyouyiji/jnbox --help` for one-off use |
-| WinGet | Windows PowerShell | `winget install --id Liangyouyiji.Jnbox --exact` |
-
-See the [official installation guide](https://liangyouyiji.com/help/jnbox-install) for channel availability.
-
 ## Releases and verification
 
 Download your platform archive from [GitHub Releases](https://github.com/liangyouyiji-dev/jnbox/releases/latest).
@@ -85,8 +64,6 @@ Releases include macOS (amd64/arm64), Linux (amd64/arm64/386/riscv64), and Windo
 Prereleases are staging candidates. Use a stable release with its complete signature files. The installer verifies publisher identity, checksum, version and command contracts before installation. macOS executables are not Apple-notarized; follow your organization's software approval process if Gatekeeper intervenes.
 
 ## Version and upgrade
-
-Use these upgrade commands for standalone installations. Homebrew installations use `brew upgrade liangyouyiji-dev/tap/jnbox`.
 
 ```sh
 jnbox version
