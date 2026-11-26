@@ -55,6 +55,33 @@ bash install.sh
 
 Default installation path: `~/.local/bin/jnbox`. Add `~/.local/bin` to your PATH if needed. Use `--install-dir PATH` or `--no-skill` to customize installation. Windows users can download the matching ZIP from Releases and verify it before extracting `jnbox.exe`.
 
+### Homebrew
+
+On macOS or Linux with Homebrew, install from the [official tap](https://github.com/liangyouyiji-dev/homebrew-tap):
+
+```sh
+brew install liangyouyiji-dev/tap/jnbox
+```
+
+Upgrade with `brew upgrade liangyouyiji-dev/tap/jnbox`. Run `jnbox install-skill` if you need the Agent Skill.
+
+### npm
+
+With Node.js 18 or later on macOS, Linux, or Windows, install the [official npm package](https://www.npmjs.com/package/@liangyouyiji/jnbox). npm selects the package for your operating system and CPU architecture.
+
+```sh
+npm install -g @liangyouyiji/jnbox
+jnbox version
+```
+
+Run `npx @liangyouyiji/jnbox --help` for one-off use. Upgrade with `npm install -g @liangyouyiji/jnbox@latest` and uninstall with `npm uninstall -g @liangyouyiji/jnbox`. Run `jnbox install-skill` if you need the Agent Skill.
+
+### WinGet (pending)
+
+The WinGet submission is under review. Once it is available, install from Windows PowerShell with `winget install --id Liangyouyiji.Jnbox --exact`.
+
+See the [official installation guide](https://liangyouyiji.com/help/jnbox-install) for channel availability.
+
 ## Releases and verification
 
 Download your platform archive from [GitHub Releases](https://github.com/liangyouyiji-dev/jnbox/releases/latest).
@@ -64,6 +91,8 @@ Releases include macOS (amd64/arm64), Linux (amd64/arm64/386/riscv64), and Windo
 Prereleases are staging candidates. Use a stable release with its complete signature files. The installer verifies publisher identity, checksum, version and command contracts before installation. macOS executables are not Apple-notarized; follow your organization's software approval process if Gatekeeper intervenes.
 
 ## Version and upgrade
+
+Use these upgrade commands for standalone installations. For Homebrew or npm installations, use the upgrade command in the corresponding section above.
 
 ```sh
 jnbox version
