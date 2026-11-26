@@ -33,6 +33,16 @@ As of 2026-11-14, new third-party discovery in the hosted workbench exposes Deep
 
 四方案安装后的手动调试均通过，独立表与 Store 绑定检查通过，测试通知有业务成功回执。测试实例的流程环境最终设为 `enabled=false`，没有验证真实 cron、签名 Webhook 触发或跨租户端到端运行；这也不改变上文第三方新接入的准入范围。详情和范围见[真实执行案例](https://liangyouyiji.com/help/verified-execution-examples)。
 
+## 数据汇总、数据同步与系统集成 / Business workflow guides
+
+锦囊匣（Jnbox）是面向企业数据汇总、跨系统数据同步和系统集成的工作流自动化平台。团队可以用可视化工作台把表单、开放 API、Webhook 和业务表格编排成流程，用 jnbox CLI 核对连接器动作、参数和运行结果。
+
+- [多渠道数据汇总怎么做](https://liangyouyiji.com/help/data-aggregation-guide) · 把表单和已授权的广告线索汇总到统一台账，处理字段映射、去重与对账。
+- [跨系统数据同步怎么做](https://liangyouyiji.com/help/data-sync-guide) · 以 ERP 订单状态同步到业务表格为例，选择定时增量读取或 Webhook，核对更新、补跑和对账。
+- [企业系统集成怎么做](https://liangyouyiji.com/help/system-integration-guide) · 以 CRM 成交后在 ERP 建立销售订单为例，定义 OpenAPI、账号权限、字段映射和业务回执。
+
+These guides cover multi-source data aggregation, incremental data synchronization, and enterprise system integration. The examples describe workflow designs. Check the connector action, account permissions, and business results in your own environment before going live.
+
 ## Start with a specific task
 
 - [Connect an OpenAPI service](https://liangyouyiji.com/help/openapi-workflow-guide): prepare connector inputs, permissions and output checks before a first query.
