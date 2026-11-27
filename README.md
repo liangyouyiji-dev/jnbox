@@ -41,7 +41,7 @@ The hosted catalog lists actions with provider test evidence and fixed-version a
 - [跨系统数据同步](https://liangyouyiji.com/help/data-sync-guide#scheduled-native-sync) · 两张原生表上的三次正式定时运行。先新增订单，再更新原记录并保留目标侧备注，第三次读回无变化。
 - [企业系统集成](https://liangyouyiji.com/help/system-integration-guide#github-openapi-ledger) · 读取真实 GitHub 公开发行 API 并写入台账。同一版本重读只保留一条，HTTP 404 在读取节点停止。
 
-The cases show field mappings, execution results, and how to check the destination. Lead samples and the scheduled order are synthetic. The OpenAPI case reads the live public GitHub Releases API. For CRM, ERP, advertising, and Feishu integrations, confirm the available actions and account permissions in your own workspace.
+The guides cover data aggregation, scheduled data synchronization, and enterprise system integration, with field mappings, execution results, and destination checks. Lead samples and the scheduled order are synthetic. The OpenAPI case reads the live public GitHub Releases API. For CRM, ERP, advertising, and Feishu integrations, confirm the available actions and account permissions in your own workspace.
 
 ## Start with a specific task
 
