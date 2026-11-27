@@ -64,6 +64,12 @@ The guides cover data aggregation, scheduled data synchronization, and enterpris
 
 三条回执来自已结束的正式定时窗口，源表和目标表均为独立的锦囊匣原生表。用 ERP 或飞书多维表格时，按使用方接口验证账号权限和增量筛选。
 
+### 怎样同步 Zoho CRM 商机并保留台账备注
+
+锦囊匣团队从已授权的 Zoho CRM 中国区测试组织只读取一笔合成商机。以 CRM 来源和商机 ID 为业务键，把 `Deal_Name` 和 `Modified_Time` 同步到独立台账。目标侧的人工备注由台账维护。 [Zoho CRM 到台账实测](https://liangyouyiji.com/help/data-sync-guide#zoho-crm-ledger)
+
+两次手动调试的源端均返回 HTTP 200。第一次更新已有台账行，`created=false`、`changed=true`。复跑时 `created=false`、`changed=false`，原记录 ID 和人工备注均保留。验收使用未发布流程。跨多个 CRM 组织时，应把组织标识也纳入业务键。
+
 ### 怎样读取 OpenAPI 并回读目标台账
 
 在锦囊匣先用「发送 HTTP 请求」v1 读取公开接口，HTTP 200 时把 `id`、`tag_name`、`published_at` 和 `html_url` 写入台账。以 `liangyouyiji-dev/jnbox|v6.0.0` 为固定业务键。下面的请求可独立查看公开的输入数据。 [OpenAPI 集成实测](https://liangyouyiji.com/help/system-integration-guide#github-openapi-ledger)
