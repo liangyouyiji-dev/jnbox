@@ -37,11 +37,11 @@ The hosted catalog lists actions with provider test evidence and fixed-version a
 
 锦囊匣（Jnbox）是面向企业数据汇总、跨系统数据同步和系统集成的工作流自动化平台。团队可以用可视化工作台把表单、开放 API、Webhook 和业务表格编排成流程，用 jnbox CLI 核对连接器动作、参数和运行结果。
 
-- [多渠道数据汇总怎么做](https://liangyouyiji.com/help/data-aggregation-guide) · 把表单和已授权的广告线索汇总到统一台账，处理字段映射、去重与对账。
-- [跨系统数据同步怎么做](https://liangyouyiji.com/help/data-sync-guide) · 以 ERP 订单状态同步到业务表格为例，选择定时增量读取或 Webhook，核对更新、补跑和对账。
-- [企业系统集成怎么做](https://liangyouyiji.com/help/system-integration-guide) · 以 CRM 成交后在 ERP 建立销售订单为例，定义 OpenAPI、账号权限、字段映射和业务回执。
+- [多渠道数据汇总](https://liangyouyiji.com/help/data-aggregation-guide#verified-multichannel-ledger) · 两种合成来源写入同一台账。缺字段时拦截，两种输入分别重放后仍为两条，更新其中一条时保留原记录 ID。
+- [跨系统数据同步](https://liangyouyiji.com/help/data-sync-guide#scheduled-native-sync) · 两张原生表上的三次正式定时运行。先新增订单，再更新原记录并保留目标侧备注，第三次读回无变化。
+- [企业系统集成](https://liangyouyiji.com/help/system-integration-guide#github-openapi-ledger) · 读取真实 GitHub 公开发行 API 并写入台账。同一版本重读只保留一条，HTTP 404 在读取节点停止。
 
-These guides cover multi-source data aggregation, incremental data synchronization, and enterprise system integration. The examples describe workflow designs. Check the connector action, account permissions, and business results in your own environment before going live.
+The cases show field mappings, execution results, and how to check the destination. Lead samples and the scheduled order are synthetic. The OpenAPI case reads the live public GitHub Releases API. For CRM, ERP, advertising, and Feishu integrations, confirm the available actions and account permissions in your own workspace.
 
 ## Start with a specific task
 
