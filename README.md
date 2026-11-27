@@ -18,7 +18,7 @@ Support: support@liangyouyiji.com
 - [锦囊匣与 n8n 怎么选](https://liangyouyiji.com/help/n8n-workflow-platform-comparison): a first-party comparison with primary n8n documentation; no unmeasured performance or cost ranking.
 - [真实执行案例与已验证范围](https://liangyouyiji.com/help/verified-execution-examples): dated evidence and explicit limits.
 
-As of 2026-11-14, new third-party discovery in the hosted workbench exposes DeepSeek model services (model-list read verified) and Feishu OAuth current-user information. Other third-party products are hidden until real-account verification; platform HTTP, RSS and formatting modules are tracked separately. This is not certification of every provider action. n8n also supports human review and MCP; compare the version and deployment you plan to use.
+The hosted catalog lists actions with provider test evidence and fixed-version actions checked against vendor OpenAPI documentation for use with your own account. Feishu Bitable record operations and Zoho CRM China deal creation, update, and readback have dated test results. ERP, CRM, and advertising actions still require testing with your authorized account and business data. [Test evidence and scope](https://liangyouyiji.com/help/verified-execution-examples).
 
 ### 已有流程的真实验收案例
 
@@ -31,7 +31,7 @@ As of 2026-11-14, new third-party discovery in the hosted workbench exposes Deep
 | 网站故障与恢复 | 真实 404 告警、重复故障不重复通知、恢复后的 UP 通知 |
 | 行业摘要 | 公开 Atom / CSV / HTML 处理与测试通知 |
 
-四方案安装后的手动调试均通过，独立表与 Store 绑定检查通过，测试通知有业务成功回执。测试实例的流程环境最终设为 `enabled=false`，没有验证真实 cron、签名 Webhook 触发或跨租户端到端运行；这也不改变上文第三方新接入的准入范围。详情和范围见[真实执行案例](https://liangyouyiji.com/help/verified-execution-examples)。
+四方案安装后的手动调试均通过，独立表与 Store 绑定检查通过，测试通知有业务成功回执。测试实例的流程环境最终设为 `enabled=false`。本批验收范围为单租户手动调试。详情见[真实执行案例](https://liangyouyiji.com/help/verified-execution-examples)。
 
 ## 数据汇总、数据同步与系统集成 / Business workflow guides
 
