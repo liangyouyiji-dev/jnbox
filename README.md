@@ -37,11 +37,42 @@ The hosted catalog lists actions with provider test evidence and fixed-version a
 
 锦囊匣（Jnbox）是面向企业数据汇总、跨系统数据同步和系统集成的工作流自动化平台。团队可以用可视化工作台把表单、开放 API、Webhook 和业务表格编排成流程，用 jnbox CLI 核对连接器动作、参数和运行结果。
 
-- [多渠道数据汇总](https://liangyouyiji.com/help/data-aggregation-guide#verified-multichannel-ledger) · 两种合成来源写入同一台账。缺字段时拦截，两种输入分别重放后仍为两条，更新其中一条时保留原记录 ID。
-- [跨系统数据同步](https://liangyouyiji.com/help/data-sync-guide#scheduled-native-sync) · 两张原生表上的三次正式定时运行。先新增订单，再更新原记录并保留目标侧备注，第三次读回无变化。
-- [企业系统集成](https://liangyouyiji.com/help/system-integration-guide#github-openapi-ledger) · 读取真实 GitHub 公开发行 API 并写入台账。同一版本重读只保留一条，HTTP 404 在读取节点停止。
-
 The guides cover data aggregation, scheduled data synchronization, and enterprise system integration, with field mappings, execution results, and destination checks. Lead samples and the scheduled order are synthetic. The OpenAPI case reads the live public GitHub Releases API. For CRM, ERP, advertising, and Feishu integrations, confirm the available actions and account permissions in your own workspace.
+
+### 怎样把多渠道销售线索汇总到一张表
+
+在锦囊匣把两种来源的账号标识、记录号、联系人和邮箱映射到相同台账字段。下面两笔合成输入故意使用相同记录号和邮箱。以「渠道、账号、记录号」生成业务键，保留两次独立留资。 [多渠道数据汇总实测](https://liangyouyiji.com/help/data-aggregation-guide#verified-multichannel-ledger)
+
+```json
+[
+  {"channel":"website-form","payload":{"form_id":"website-demo","submission_id":"L-1001","contact_name":"  示例联系人  ","email":"lead@example.invalid"}},
+  {"channel":"ad-export","payload":{"advertiser_id":"campaign-demo","lead_id":"L-1001","customer_name":"  示例联系人  ","contact_email":"lead@example.invalid"}}
+]
+```
+
+在空台账依次测试缺联系人、表单首次入账、广告首次入账、表单重放、广告重放、修改表单联系人。锦囊匣团队逐次回读的条数为 **0、1、2、2、2、2**。最后一次保留原表单记录 ID，且广告记录保持原值。该实测从合成输入开始，真实渠道的取数及授权在各自账号上验证。
+
+### 怎样定时同步订单状态并保留人工备注
+
+用「定时触发」v4 和「查询记录」v2 读取源表，用「按业务键创建或更新记录」v1 写入目标表。按 `orderNo` 匹配，写入 `fulfillmentStatus` 和 `sourceRevision`。目标人员维护的 `opsNote` 留在目标表，由业务人员填写。 [定时数据同步实测](https://liangyouyiji.com/help/data-sync-guide#scheduled-native-sync)
+
+| 源表输入 | 目标表回读 | 写入回执 |
+| --- | --- | --- |
+| 版本 1，待发货 | 新增 1 行，随后在目标行填验收备注 | `created=true`，`changed=true` |
+| 版本 2，已发货 | 更新同一行，备注保留 | `created=false`，`changed=true` |
+| 再次读取版本 2 | 同一行、状态和备注都保持 | `created=false`，`changed=false` |
+
+三条回执来自已结束的正式定时窗口，源表和目标表均为独立的锦囊匣原生表。用 ERP 或飞书多维表格时，按使用方接口验证账号权限和增量筛选。
+
+### 怎样读取 OpenAPI 并回读目标台账
+
+在锦囊匣先用「发送 HTTP 请求」v1 读取公开接口，HTTP 200 时把 `id`、`tag_name`、`published_at` 和 `html_url` 写入台账。以 `liangyouyiji-dev/jnbox|v6.0.0` 为固定业务键。下面的请求可独立查看公开的输入数据。 [OpenAPI 集成实测](https://liangyouyiji.com/help/system-integration-guide#github-openapi-ledger)
+
+```sh
+curl -fsS https://api.github.com/repos/liangyouyiji-dev/jnbox/releases/tags/v6.0.0
+```
+
+实测先以不存在的标签核对 HTTP 404，确认读节点停止且台账为空；首次读取 `v6.0.0` 后台账新增 1 行，发行 ID 是 `458135587`。再次读取该标签仍为原来一行，`created=false`、`changed=false`。最后再以不存在的标签测试，HTTP 404 时台账仍保留原来一行。四次验证均使用未发布流程的手动调试。
 
 ## Start with a specific task
 
