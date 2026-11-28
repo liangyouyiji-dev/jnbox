@@ -6,7 +6,7 @@ Use jnbox to let your AI Agent configure, validate, and troubleshoot business wo
 
 [让 Agent 配置订单复核流程 / Try the Agent exercise](https://liangyouyiji.com/help/workflow-formal-run#order-review)
 
-[官网 / Website](https://liangyouyiji.com) · [锦囊匣平台 / Platform](https://liangyouyiji.com/product) · [jnbox CLI 产品页 / CLI product](https://liangyouyiji.com/product/jnbox) · [帮助中心 / Documentation](https://liangyouyiji.com/help) · [安装 / Installation](#install) · [Releases](https://github.com/liangyouyiji-dev/jnbox/releases/latest)
+[官网 / Website](https://liangyouyiji.com) · [帮助中心 / Documentation](https://liangyouyiji.com/help) · [安装 / Installation](#install) · [Releases](https://github.com/liangyouyiji-dev/jnbox/releases/latest)
 
 Support: support@liangyouyiji.com
 
@@ -41,7 +41,7 @@ The hosted catalog lists actions with provider test evidence and fixed-version a
 
 ## 数据汇总、数据同步与系统集成 / Business workflow guides
 
-锦囊匣（Jnbox）是面向企业数据汇总、跨系统数据同步和系统集成的工作流自动化平台。团队可以用可视化工作台把表单、开放 API、Webhook 和业务表格编排成流程，用 jnbox CLI 核对连接器动作、参数和运行结果。
+锦囊匣（Jnbox）是面向企业数据汇总、跨系统数据同步和系统集成的工作流自动化平台。把表单、开放 API、Webhook 或业务表格的处理规则交给 Agent，由它用 jnbox 核对连接器动作、配置流程和验证结果。
 
 The guides cover data aggregation, scheduled data synchronization, and enterprise system integration, with field mappings, execution results, and destination checks. Lead samples and the scheduled order are synthetic. The OpenAPI case reads the live public GitHub Releases API. For CRM, ERP, advertising, and Feishu integrations, confirm the available actions and account permissions in your own workspace.
 
