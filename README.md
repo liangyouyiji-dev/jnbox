@@ -6,7 +6,7 @@ Workflow automation and enterprise API execution for AI agents. jnbox is the off
 
 锦囊匣连接企业 API、Webhook、邮件与数据表，提供可视化流程编排、人工确认和运行记录。jnbox 是面向工程团队与 AI Agent 的命令行入口，用于查询能力、校验输入、交付流程与诊断已有运行。具体执行能力取决于目标环境的连接器、账号权限和已发布动作。
 
-[官网 / Website](https://liangyouyiji.com) · [帮助中心 / Documentation](https://liangyouyiji.com/help) · [安装 / Installation](#install) · [Releases](https://github.com/liangyouyiji-dev/jnbox/releases/latest)
+[官网 / Website](https://liangyouyiji.com) · [锦囊匣平台 / Platform](https://liangyouyiji.com/product) · [jnbox CLI 产品页 / CLI product](https://liangyouyiji.com/product/jnbox) · [帮助中心 / Documentation](https://liangyouyiji.com/help) · [安装 / Installation](#install) · [Releases](https://github.com/liangyouyiji-dev/jnbox/releases/latest)
 
 Support: support@liangyouyiji.com
 
