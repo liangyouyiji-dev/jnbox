@@ -1,14 +1,20 @@
 # 锦囊匣 · jnbox
 
-`jnbox` 是锦囊匣的命令行工具。所有发行包与命令均使用 `jnbox`，Windows 可执行文件为 `jnbox.exe`。
+把业务规则交给 AI Agent，由它通过 `jnbox` 查找可用动作、配置工作流、验证输出和诊断失败。团队在锦囊匣工作台授权账号、核对草稿和运行结果。
 
-Workflow automation and enterprise API execution for AI agents. jnbox is the official command-line interface for 锦囊匣, operated by 杭州亮有一计科技有限公司 (Liang You Yi Ji).
+Use jnbox to let your AI Agent configure, validate, and troubleshoot business workflows. Jnbox is the official CLI for 锦囊匣, operated by 杭州亮有一计科技有限公司 (Liang You Yi Ji).
 
-锦囊匣连接企业 API、Webhook、邮件与数据表，提供可视化流程编排、人工确认和运行记录。jnbox 是面向工程团队与 AI Agent 的命令行入口，用于查询能力、校验输入、交付流程与诊断已有运行。具体执行能力取决于目标环境的连接器、账号权限和已发布动作。
+[让 Agent 配置订单复核流程 / Try the Agent exercise](https://liangyouyiji.com/help/workflow-formal-run#order-review)
 
 [官网 / Website](https://liangyouyiji.com) · [锦囊匣平台 / Platform](https://liangyouyiji.com/product) · [jnbox CLI 产品页 / CLI product](https://liangyouyiji.com/product/jnbox) · [帮助中心 / Documentation](https://liangyouyiji.com/help) · [安装 / Installation](#install) · [Releases](https://github.com/liangyouyiji-dev/jnbox/releases/latest)
 
 Support: support@liangyouyiji.com
+
+## 第一次试跑 / First run
+
+1. [免费注册锦囊匣](https://jnbox.liangyouyiji.com/register?redirect_path=%2Fflow%3FagentTask%3Dorder-review)，验证邮箱并创建组织工作区。
+2. 按[安装说明](#install)安装 jnbox，运行 `jnbox install-skill` 后重新打开 Agent 会话。在自己的终端运行 `jnbox login`。
+3. 把[订单复核任务](https://liangyouyiji.com/help/workflow-formal-run#order-review)复制给能运行命令的 Agent。它用 jnbox 配置草稿，并用三笔合成订单核对 500 元的复核边界。练习无需授权第三方账号。
 
 ## Choosing an Agent execution layer
 
